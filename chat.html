@@ -8,10 +8,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="banner">
-        <h1>Chatroom</h1>
-        <p>Welcome to the chat!</p>
-    </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
         <div class="container">
@@ -36,14 +32,11 @@
     <header>
         <h1>Chatroom</h1>
     </header>
-    <main>
-        <p>Welcome to the chatroom!</p>
-    </main>
 </body>
 
 <main>
     <h2>Chatroom</h2>
-    <p style="margin-bottom: 20px;" 15px color = "black">This is a simple chatroom where you can send and receive messages in real-time. Type your message below and hit "Send!".</p>
+    <p style="margin-bottom: 20px;" 15px color = "black">Welcome to the chatroom! This is a simple chatroom where you can send and receive messages in real-time. Type your message below and hit "Send"!</p>
     <div class="chat-container">
         <section class="user-list">
             <h3>Users</h3>
@@ -58,9 +51,9 @@
                 <!-- chat messages will be displayed here -->
             </div>
             <div id="typingIndicator" class="typing-indicator"></div>
-            <div class="chat-input">
-                <input type="text" id="messageInput" placeholder="Type your message here..." />
-                <button id="sendButton">Send!</button>
+            <div class="chat-input-area">
+                <input type="text" id="msg-input" placeholder="Type a message..." autocomplete="off">
+                <button id="send-btn">Send</button>
             </div>
         </section>
     </div>
@@ -69,4 +62,5 @@
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; Myself by Grace Vickers '26</p>
     </footer>
+    <script src="app.js"></script>
 </html>
