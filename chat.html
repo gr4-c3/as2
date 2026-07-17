@@ -3,16 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
+    <title>Chatroom</title>
     <link href="uni\ass2\style.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="banner">
+        <h1>Chatroom</h1>
+        <p>Welcome to the chat!</p>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+        <div class="container">
+            <a  class="navbar-brand"><h1>Menu</h1></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="introduction.html">Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="information.html">Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat.html">Chatroom</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<body>
     <header>
-        <h1>Chat</h1>
+        <h1>Chatroom</h1>
     </header>
     <main>
-        <p>Welcome to the chat!</p>
+        <p>Welcome to the chatroom!</p>
     </main>
 </body>
+
+<main>
+    <h2>Chatroom</h2>
+    <p style="margin-bottom: 20px;" 15px color = "black">This is a simple chatroom where you can send and receive messages in real-time. Type your message below and hit "Send!".</p>
+    <div class="chat-container">
+        <section class="user-list">
+            <h3>Users</h3>
+            <ul id="userList">
+                <li>You</li> <!-- user list to be added here -->
+            </ul>
+        </section>
+
+        <section class="chat-main">
+            <div class="chat-messages" id="chat-window">
+                <div class="message-system">Welcome to the chatroom! Please be respectful :3</div>
+                <!-- chat messages will be displayed here -->
+            </div>
+            <div id="typingIndicator" class="typing-indicator"></div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message here..." />
+                <button id="sendButton">Send!</button>
+            </div>
+        </section>
+    </div>
+</main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; Myself by Grace Vickers '26</p>
+    </footer>
 </html>
