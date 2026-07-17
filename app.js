@@ -13,13 +13,50 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderUserList() {
         usersBox.innerHTML = activeUsers.map(user => `<li>${user}</li>`).join('');
     }
-function appendMessage(text, type) {
+
+    function appendMessage(text, type) {
         const msgDiv = document.createElement("div");
         msgDiv.classList.add("message", type);
         msgDiv.textContent = text;
         chatWindow.appendChild(msgDiv);
         chatWindow.scrollTop = chatWindow.scrollHeight; // Auto Scroll
     }
+
+    // making the bot simulate a response with a timeline of events
+    function simulateBotResponse() {
+        //charlotte joins after 1 second
+        setTimeout(() => {
+            if (!activeUsers.includes("Charlotte (Sister)")) {
+                activeUsers.push("Charlotte (Sister)");
+                renderUserList();
+                appendMessage("Charlotte (Sister) joined the chat room.", "system");
+            }
+        }, 1000);
+
+        //she shows a typing indicator after 3 seconds
+        setTimeout(() => {
+            if (activeUsers.includes("Charlotte (Sister)")) {
+                typingIndicator.textContent = "Charlotte (Sister) is typing...";
+            }
+        }, 3000);
+
+        //the indicator goes away and she sends a message after 6 seconds
+        setTimeout(() => {
+            if (activeUsers.includes("Charlotte (Sister)")) {
+                typingIndicator.textContent = "";
+                appendMessage("Hey i miss you! I hope you come home soon.", "other");
+            }
+            
+            //she leaves the chat
+            setTimeout(() => {
+                activeUsers = activeUsers.filter(u => u !== "Charlotte (Sister)");
+                renderUserList();
+                appendMessage("Charlotte (Sister) has exited the chat.", "system");
+            }, 3000);
+
+        }, 6000);
+    } 
+
     //for sending messages, we have a function that handles both the button click and the enter key press
     function handleSendMessage() {
         const text = msgInput.value.trim(); 
